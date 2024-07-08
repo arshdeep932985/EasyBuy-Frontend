@@ -8,7 +8,7 @@ import { addToCart } from "../redux/reducer/cartReducer";
 import { CartItem } from "../types/types";
 
 const Home = () => {
-  console.log(import.meta.env.VITE_FIREBASE_KEY)
+  
   const { data, isLoading, isError } = useLatestProductsQuery("");
 
   const dispatch = useDispatch();
