@@ -50,7 +50,7 @@
 
   img {
     @include square(calc(18.75rem - 3rem));
-    object-fit: cover;
+    object-fit: containstatus;
     margin: 1rem;
   }
 
