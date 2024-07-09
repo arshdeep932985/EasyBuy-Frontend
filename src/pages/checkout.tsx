@@ -101,6 +101,11 @@ const Checkout = () => {
       stripe={stripePromise}
     >
       <CheckOutForm />
+      <div style={{display:"flex",justifyContent:"center"}}>
+        <div style={{margin:"40px", color:"grey"}}>
+        Indian Test Visa Card :4000 0035 6000 0008
+        </div>
+      </div>
     </Elements>
   );
 };

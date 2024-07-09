@@ -23,7 +23,10 @@ const Home = () => {
 
   return (
     <div className="home">
-      <section></section>
+      
+       <Link to="/search" className="findmore">
+       <section className="section"></section>
+        </Link>
 
       <h1>
         Latest Products

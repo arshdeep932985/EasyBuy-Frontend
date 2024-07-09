@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Logo from '../assets/Logo.png'
 import {
   FaSearch,
   FaShoppingBag,
@@ -11,6 +12,7 @@ import { User } from "../types/types";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import toast from "react-hot-toast";
+
 
 interface PropsType {
   user: User | null;
@@ -31,43 +33,63 @@ const Header = ({ user }: PropsType) => {
 
   return (
     <nav className="header">
+      <div className="logo">
       <Link onClick={() => setIsOpen(false)} to={"/"}>
-        HOME
+        <img className="logo-img" src={Logo} alt="Logo" />
       </Link>
-      <Link onClick={() => setIsOpen(false)} to={"/search"}>
-        <FaSearch />
-      </Link>
-      <Link onClick={() => setIsOpen(false)} to={"/cart"}>
-        <FaShoppingBag />
-      </Link>
+      </div>
+      <div className="right-header">
+     <div className="icons-div">
+     <div className="icons">
+     
 
-      {user?._id ? (
-        <>
-          <button onClick={() => setIsOpen((prev) => !prev)}>
-            <FaUser />
-          </button>
-          <dialog open={isOpen}>
-            <div>
-              {user.role === "admin" && (
-                <Link onClick={() => setIsOpen(false)} to="/admin/dashboard">
-                  Admin
-                </Link>
-              )}
+     <Link onClick={() => setIsOpen(false)} to={"/"}>
+       Home
+     </Link>
 
-              <Link onClick={() => setIsOpen(false)} to="/orders">
-                Orders
-              </Link>
-              <button onClick={logoutHandler}>
-                <FaSignOutAlt />
-              </button>
-            </div>
-          </dialog>
-        </>
-      ) : (
-        <Link to={"/login"}>
-          <FaSignInAlt />
-        </Link>
-      )}
+     <Link onClick={() => setIsOpen(false)} to={"/search"}>
+       
+       <FaSearch/>
+     </Link>
+     <Link onClick={() => setIsOpen(false)} to={"/cart"}>
+       <FaShoppingBag />
+     </Link>
+
+     {user?._id ? (
+       <>
+         <button onClick={() => setIsOpen((prev) => !prev)}>
+           <FaUser />
+         </button>
+         <dialog open={isOpen}>
+           <div>
+             {user.role === "admin" && (
+               <Link onClick={() => setIsOpen(false)} to="/admin/dashboard">
+                 Admin
+               </Link>
+             )}
+
+             <Link onClick={() => setIsOpen(false)} to="/orders">
+               Orders
+             </Link>
+             <button onClick={logoutHandler}>
+               <FaSignOutAlt />
+             </button>
+           </div>
+         </dialog>
+       </>
+     ) : (
+       <Link to={"/login"}>
+         <FaSignInAlt />
+       </Link>
+     )}
+     </div>
+     </div>
+      <div className="admin-link">
+      <Link className="admin-dashboard" to={"https://admin-dashboard-1l5ydbwkd-arshdeeps-projects-b02e1b69.vercel.app/"}>
+        Not an admin? <span className="link">check demo Admin Dashboard</span>
+      </Link>
+      </div>
+      </div>
     </nav>
   );
 };

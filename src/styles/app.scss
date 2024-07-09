@@ -57,15 +57,63 @@ $color3: rgb(0, 104, 136);
   }
 }
 
+.icons-div{
+  width:280px;
+display:flex;
+flex-direction: row-reverse;
+}
+
+.icons{
+  width:180px;
+  display:flex;
+  justify-content: space-around;
+  align-items: center
+}
+
 .heading {
   @include heading;
   margin: 1rem 0;
   text-align: center;
 }
+.link{
+  color:rgb(28, 111, 220);
+  text-decoration: underline;
+}
+
+.logo-img{
+  height:65px;
+  width: 190px;
+  padding:5px 7px;
+  margin-top: 15px;
+}
+.search-logo{
+  display: inline;
+  margin-right: 400px;
+  margin-top:5px;
+  height:35px
+}
+
+.right-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+
+}
 
 .header {
   @include flex(row, flex-end, stretch, 1.2rem);
-  padding: 1rem;
+  
+  display: flex;
+  justify-content: space-between;
+
+  .admin-dashboard{
+    font-size: 12px;
+   
+    letter-spacing: 0px;
+  }
+  
   a {
     color: $color2;
     letter-spacing: 2px;
@@ -322,3 +370,5 @@ $color3: rgb(0, 104, 136);
     opacity: 0.6;
   }
 }
+
+
