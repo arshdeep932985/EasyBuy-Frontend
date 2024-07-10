@@ -85,7 +85,7 @@ const Header = ({ user }: PropsType) => {
      </div>
      </div>
       <div className="admin-link">
-      <Link className="admin-dashboard" to={"https://admin-dashboard-1l5ydbwkd-arshdeeps-projects-b02e1b69.vercel.app/"}>
+      <Link className="admin-dashboard" to={"https://admin-dashboard.arshdeepsingh.in/admin/dashboard"}>
         Not an admin? <span className="link">check demo Admin Dashboard</span>
       </Link>
       </div>
